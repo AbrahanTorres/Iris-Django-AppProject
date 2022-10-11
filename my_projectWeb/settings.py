@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-# TODO: añadir la librería django.utils.translation
+# añadir la librería django.utils.translation
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
