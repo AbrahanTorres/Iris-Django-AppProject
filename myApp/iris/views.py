@@ -120,13 +120,44 @@ def updateData(request):
 @api_view(['GET', 'DELETE', 'POST'])
 def deleteData(request):
     if request.method == 'GET':
-        # TODO: mostrar el último dato del dataset en la plantilla delete.html
-        pass
+        # mostrar el último dato del dataset en la plantilla delete.html
+        X = settings.MEDIA_ROOT + '/iris.csv'
+        #Cargamos el data se con ayuda de pandas:
+        df = pd.read_csv(X)
+        lastData = df.iloc[-1]
+        sepal_width = str(lastData["sepal_width"])
+        sepal_length = str(lastData["sepal_length"])
+        petal_width = str(lastData["petal_width"])
+        petal_length = str(lastData["petal_length"])
+        species = str(lastData["species"])
+        return render(request, "iris/update.html",
+                        context={"lastData": lastData,
+                                "sepal_width": sepal_width,
+                                "sepal_length": sepal_length,
+                                "petal_width": petal_width,
+                                "petal_length": petal_length,
+                                "species": species})
+
     # Lo probamos usando POSTMAN:
     elif request.method == 'DELETE':
-        # TODO: eliminar el último dato del csv
-        pass
+        # eliminar el último dato del csv
+        X = settings.MEDIA_ROOT + '/iris.csv'
+        df = pd.read_csv(X)
+        # Eliminar la última fila
+        df.drop(df.index[-1], inplace=True)
+        df.to_csv(X, index=False)
+        return Response(df.iloc[-1], status=status.HTTP_204_NO_CONTENT)
+
     # Lo mismo que el método DELETE pero a través del front-end:
     elif request.method == 'POST':
-        # TODO: eliminar el último dato del csv
-        pass
+        #eliminar el último dato del csv
+        X = settings.MEDIA_ROOT + '/iris.csv'
+        df = pd.read_csv(X)
+        # Eliminar la última fila
+        df.drop(df.index[-1], inplace=True)
+        # convertir a csv
+        df.to_csv(X, index=False)
+        # Redireccionamos a la página principal para comprobar el dataset:
+        return redirect('/iris/')
+
+
