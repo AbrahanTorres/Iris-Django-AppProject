@@ -1,6 +1,6 @@
 from django.urls import path, re_path, include
 from myApp import views
-from myApp.iris.views import irisData, insertData
+from myApp.iris.views import irisData, insertData, updateData
 
 urlpatterns = [
     re_path(r'^home/', views.home, name='home'),
@@ -12,6 +12,7 @@ urlpatterns = [
     path('iris/', irisData, name="iris"),
     # Añadir las urls para insertData
     path('insertData/', insertData, name="insertData"),
-    # TODO: Añadir las urls para updateData
+    # Añadir las urls para updateData
+    path('updateData/', updateData, name="updateData"),
     # TODO: Añadir las urls para deleteData
 ]
