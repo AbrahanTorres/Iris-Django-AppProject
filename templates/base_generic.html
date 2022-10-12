@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-        {% block title %}<title>Django Course</title>{% endblock %}
+        {% block title %}<title>Django Iris Porject</title>{% endblock %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,24 +15,26 @@
     </head>
 
     <body>
+        <!--load i18n para traducción-->
+        {% load i18n %}
         <table align="right" style="margin-right: 25px; margin-top: 20px">
             <tbody>
                 {% if user.is_authenticated %}
-                    <tr>
-                        <td>User: {{ user.username|default:'Guest' }}</td>
+                    <tr> <!--trans "User:" para la palabra a traducir-->
+                        <td>{% trans "User:" %} {{ user.username|default:'Guest' }}</td>
                     </tr>
                     <tr>
                         <!--Añadir las urls para activar el logout y contraseña-->
-                        <td><a href="{% url 'logout' %}">Logout</a><td>
-                        <td><a href="{% url 'password_change' %}">Change password</a></td>
+                        <td><a href="{% url 'logout' %}">{% trans "Logout" %}</a><td>
+                        <td><a href="{% url 'password_change' %}">{% trans "Change password" %}</a></td>
                     </tr>
                 {% else %}
                     <tr>
-                      <td>User: {{ user.username|default:'Guest' }}</td>
+                      <td>{% trans "User:" %} {{ user.username|default:'Guest' }}</td>
                     </tr>
                     <tr>
                         <!--Añadir las urls para activar el login-->
-                      <td><a href="{% url 'login' %}">Login</a></td>
+                      <td><a href="{% url 'login' %}">{% trans "Login" %}</a></td>
                     </tr>
                 {% endif %}
             </tbody>
@@ -43,11 +45,11 @@
                     {% block sidebar %}
                         <!-- Añadir las urls para activar el menú-->
                         <ul class="sidebar-nav" style="margin-top: 20px;">
-                            <li><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'iris' %}">Iris Data</a></li>
-                            <li><a href="{% url 'insertData' %}">Insert Data</a></li>
-                            <li><a href="{% url 'updateData' %}">Update Data</a></li>
-                            <li><a href="#">Delete Data</a></li>
+                            <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                            <li><a href="{% url 'iris' %}">{% trans "Iris Data" %}</a></li>
+                            <li><a href="{% url 'insertData' %}">{% trans "Insert Data" %}</a></li>
+                            <li><a href="{% url 'updateData' %}">{% trans "Update Data" %}</a></li>
+                            <li><a href="#">{% trans "Delete Data" %}</a></li>
                         </ul>
                     {% endblock %}
                 </div>

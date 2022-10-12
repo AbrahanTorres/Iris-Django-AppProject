@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-12 15:58-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: my_projectWeb/settings.py:124
+msgid "Español"
+msgstr ""
+
+#: my_projectWeb/settings.py:125
+msgid "English"
+msgstr ""
+
+#: templates/base_generic.html:24 templates/base_generic.html:33
+msgid "User:"
+msgstr "Usuario:"
+
+#: templates/base_generic.html:28
+#, fuzzy
+#| msgid "Logout:"
+msgid "Logout"
+msgstr "Salida"
+
+#: templates/base_generic.html:29
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: templates/base_generic.html:37
+msgid "Login"
+msgstr "Entrada"
+
+#: templates/base_generic.html:48
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/base_generic.html:49
+msgid "Iris Data"
+msgstr "Datos Iris"
+
+#: templates/base_generic.html:50
+msgid "Insert Data"
+msgstr "Insertar Datos"
+
+#: templates/base_generic.html:51
+msgid "Update Data"
+msgstr "Actualizar Datos"
+
+#: templates/base_generic.html:52
+msgid "Delete Data"
+msgstr "Eliminar Datos"
+
+#: templates/home.html:6
+msgid "Django Home"
+msgstr "Django Inicio"
+
+#: templates/home.html:8
+msgid "Welcome to"
+msgstr "Bienvenido a"
+
+#: templates/home.html:8
+msgid "Django appplication"
+msgstr "Aplicación Django"
+
+#: templates/home.html:8
+msgid ", a very basic Django website developed."
+msgstr ", a una básica página web desarrollada en Django"
+
+#: templates/home.html:10
+msgid "Dynamic content"
+msgstr "Contenedor dinámico"
+
+#: templates/home.html:12
+msgid "Example data:"
+msgstr "Ejemplo de datos"
+
+#: templates/home.html:16
+msgid "Sepal length in cm:"
+msgstr "Longitud del sépalo en cm"
+
+#: templates/home.html:17
+msgid "sepal width in cm:"
+msgstr "Anchura del sépalo en cm"
+
+#: templates/home.html:18
+msgid "Petal length in cm:"
+msgstr "Longitud del pétalo en cm"
+
+#: templates/home.html:19
+msgid "Petal width in cm:"
+msgstr "Anchura del pétalo en cm"
+
+#: templates/home.html:20
+msgid "Class:"
+msgstr "Clase"

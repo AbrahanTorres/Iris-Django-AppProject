@@ -2,21 +2,22 @@
 
 {% block content %}
 {% load static %}
-<h1>Django Home</h1>
+{% load i18n %}
+<h1>{% trans 'Django Home' %}</h1>
 
-  <p>Welcome to <em>Django appplication</em>, a very basic Django website developed.</p>
+  <p>{% trans 'Welcome to' %} <em>{% trans 'Django appplication' %}</em>{% trans ', a very basic Django website developed.' %}</p>
 
-<h2>Dynamic content</h2>
+<h2>{% trans 'Dynamic content' %}</h2>
 
-  <p>Example data:</p>
+  <p>{% trans 'Example data:' %}</p>
   <div style="width:100%">
       <div style="float:left;width:50%">
         <ul>
-            <li><strong>Sepal length in cm:</strong> {{ sepal_length }}</li>
-            <li><strong>sepal width in cm:</strong> {{ sepal_width }}</li>
-            <li><strong>Petal length in cm:</strong> {{ petal_length }}</li>
-            <li><strong>Petal width in cm:</strong> {{ petal_width }}</li>
-            <li><strong>Class:</strong> {{ class }}</li>
+            <li><strong>{% trans 'Sepal length in cm:' %}</strong> {{ sepal_length }}</li>
+            <li><strong>{% trans 'sepal width in cm:' %}</strong> {{ sepal_width }}</li>
+            <li><strong>{% trans 'Petal length in cm:' %}</strong> {{ petal_length }}</li>
+            <li><strong>{% trans 'Petal width in cm:' %}</strong> {{ petal_width }}</li>
+            <li><strong>{% trans 'Class:' %}</strong> {{ class }}</li>
         </ul>
       </div>
       <div style="float:right;width:50%">

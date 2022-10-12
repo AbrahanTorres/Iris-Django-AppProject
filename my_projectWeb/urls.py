@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),   #toma la configuración del adminsitrador y la carga a la app.
     url(r"^", include("myApp.urls")),
-    # TODO: nombrar la url de traducción
+    # nombrar la url de traducción
+    path('i18n/', include('django.conf.urls.i18n')),
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)+\
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

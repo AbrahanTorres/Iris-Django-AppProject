@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 # añadir la librería django.utils.translation
+from django.utils.translation import gettext_lazy as _
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,7 +50,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # TODO: Añadir django.middleware.locale.LocaleMiddleware
+    # Añadir django.middleware.locale.LocaleMiddleware
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -118,9 +120,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-# TODO: Añadir los LANGUAGES permitidos
+# Añadir los LANGUAGES permitidos
+LANGUAGE = (('es', _('Español')),
+            ('en-us', _('English')),
+            )           
 
-# TODO: Cambiar la hora dependiendo de nuestra ubicación
+# Cambiar la hora dependiendo de nuestra ubicación
 TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
